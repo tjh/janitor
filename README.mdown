@@ -1,0 +1,20 @@
+Janitor Gem
+=============
+
+Tim Harvey
+
+Mike Krisher
+
+
+Details
+=======
+
+Need a code janitor? Someone to scan your code base and look
+for leftover debug statements, console logs, and gasp, vulgarity!
+
+Simple to use, point it at your code base, and run janitor report
+
+To learn more about Ack:
+[http://betterthangrep.com][]
+
+[http://betterthangrep.com/]: http://betterthangrep.com
