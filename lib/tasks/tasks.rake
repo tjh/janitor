@@ -3,8 +3,6 @@ namespace :janitor do
   task :cleanup do
     @commands = []
     Rake::Task["janitor:find:all"].invoke
-    
-    exec @commands.join(";")
   end
   
   namespace :find do
@@ -12,14 +10,12 @@ namespace :janitor do
     
     desc "Find any 'debugger' statements"
     task :debugger do
-      command = "rak -a debugger"
-      @commands.nil? ? exec(command) : @commands << command
+      system("rak -a debugger")
     end
     
     desc "Find any 'console.log' statements"
     task :console_log do
-      command = "rak -a 'console.log' tmp/javascript"
-      @commands.nil? ? exec(command) : @commands << command
+      system("rak -a 'console.log' tmp/javascript")
     end
   end
 end
