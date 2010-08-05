@@ -12,7 +12,7 @@ begin
     gem.email = "mike@mikekrisher.com"
     gem.homepage = "http://github.com/tjh/janitor"
     gem.authors = ["Tim Harvey", "Michael Krisher"]
-    gem.add_development_dependency "rak", ">= 0"
+    gem.add_dependency "rak"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
