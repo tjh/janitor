@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'rake'
 
+Dir[File.expand_path(File.join(File.dirname(__FILE__),'lib/tasks','*'))].sort.each {|f| load f}
+
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
@@ -10,7 +12,7 @@ begin
     gem.email = "mike@mikekrisher.com"
     gem.homepage = "http://github.com/tjh/janitor"
     gem.authors = ["Tim Harvey", "Michael Krisher"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_development_dependency "rak", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
