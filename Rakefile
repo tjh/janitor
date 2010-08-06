@@ -1,7 +1,9 @@
 require 'rubygems'
 require 'rake'
 
-Dir[File.expand_path(File.join(File.dirname(__FILE__),'lib/tasks','*'))].sort.each {|f| load f}
+$:.unshift 'lib'
+
+Dir["#{File.dirname(__FILE__)}/lib/tasks/*.rake"].sort.each { |ext| load ext }
 
 begin
   require 'jeweler'
