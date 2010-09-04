@@ -3,8 +3,6 @@ require 'rake'
 
 $:.unshift 'lib'
 
-Dir["#{File.dirname(__FILE__)}/lib/tasks/*.rake"].sort.each { |ext| load ext }
-
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|

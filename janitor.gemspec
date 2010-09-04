@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{janitor}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tim Harvey", "Michael Krisher"]
-  s.date = %q{2010-09-03}
+  s.date = %q{2010-09-04}
   s.description = %q{ever leave a breakpoint in your code and do a deploy? not good, right? maybe you just want to remove the logger.info calls from your Rails project. janitor cleans your code}
   s.email = %q{mike@mikekrisher.com}
   s.extra_rdoc_files = [
@@ -23,10 +23,15 @@ Gem::Specification.new do |s|
      "README.mdown",
      "Rakefile",
      "VERSION",
+     "init.rb",
+     "janitor.gemspec",
      "lib/finder.rb",
-     "lib/janitor.rb",
-     "lib/rak_result.rb",
+     "lib/janitor/finder.rb",
+     "lib/janitor/janitor.rb",
+     "lib/janitor/rak_result.rb",
+     "lib/janitor/tasks.rb",
      "lib/tasks/tasks.rake",
+     "nails/init.rb",
      "spec/lib/finder_spec.rb",
      "spec/lib/janitor_spec.rb",
      "spec/lib/rak_result_spec.rb",

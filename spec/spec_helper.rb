@@ -4,7 +4,7 @@ require 'spec'
 require 'spec/autorun'
 
 # Require each of our libraries
-Dir.glob(File.join(File.dirname(__FILE__), '../lib/*.rb')).each {|f| require f }
+Dir.glob(File.join(File.dirname(__FILE__), '../lib/**/*.rb')).each {|f| require f }
 
 Spec::Runner.configure do |config|
   
