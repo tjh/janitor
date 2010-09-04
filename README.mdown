@@ -36,3 +36,5 @@ To Do
 
 * YML-ize the various search tasks to allow a project to specify the things that shouldn't be in the codebase.
 * Create a profanity filter
+* Config settings for folders or files to ignore (like a .gitignore)
+* Figure out how to ignore statements that have been commented out
