@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
      "lib/janitor.rb",
      "lib/janitor/finder.rb",
      "lib/janitor/janitor.rb",
+     "lib/janitor/rak_hit.rb",
      "lib/janitor/rak_result.rb",
      "lib/janitor/tasks.rb",
      "lib/tasks/tasks.rake",
