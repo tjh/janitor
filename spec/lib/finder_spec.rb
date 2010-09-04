@@ -19,8 +19,15 @@ describe "Finder" do
   end
   
   describe " #hits" do
-    it "should return an Array of file names followed by a colon and line number from the RakResult" do
-      pending
+    it "should return the array of hits from the RakResult returned by exec_rak" do
+      pattern = 'a_regex'
+      hit        = mock('rak_hit', 
+        :file_name => "filename.rb",
+        :line_number => 10)
+      rak_result = mock('rak_result', :hits => [hit])
+      finder = Finder.new
+      finder.should_receive(:search_by_regex).and_return(rak_result)
+      finder.hits(pattern).should == ["filename.rb:10"]
     end
   end
   

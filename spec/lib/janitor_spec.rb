@@ -27,6 +27,12 @@ describe "Janitor" do
     end
   end
   
+  describe " integration testing" do
+    it " should find debugger once in 'tmp/'" do
+      Janitor.count('console\.log', 'tmp/').should == 3
+    end
+  end
+  
   def mock_finder(pattern, path, *args)
     options = args.first ? args.first : {}
     options = {:number_of_matches => 0}.merge options

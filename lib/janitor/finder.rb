@@ -10,6 +10,11 @@ class Finder
     rak_result.hits.size
   end
   
+  def hits(pattern)
+    rak_result = search_by_regex(pattern)
+    rak_result.hits.collect { |hit| "#{hit.file_name}:#{hit.line_number}" }
+  end
+  
   def search_by_regex(pattern)
     exec_rak(pattern, '--all')
   end

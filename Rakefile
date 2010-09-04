@@ -7,8 +7,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "janitor"
-    gem.summary = "janitor scans your code for leftover debug statements, consolr logs, and vulgarity"
-    gem.description = "ever leave a breakpoint in your code and do a deploy? not good, right? maybe you just want to remove the logger.info calls from your Rails project. janitor cleans your code"
+    gem.summary = "janitor scans your code for leftover debug statements, console.logs, and vulgarity"
+    gem.description = "ever leave a breakpoint in your code and do a deploy? not good, right? maybe you just want to remove the logger.info calls from your Rails project. janitor cleans your code."
     gem.email = "mike@mikekrisher.com"
     gem.homepage = "http://github.com/tjh/janitor"
     gem.authors = ["Tim Harvey", "Michael Krisher"]
@@ -17,7 +17,7 @@ begin
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
+  raise "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
 
 

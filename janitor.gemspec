@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{janitor}
-  s.version = "0.1.2"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tim Harvey", "Michael Krisher"]
@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
      "VERSION",
      "init.rb",
      "janitor.gemspec",
-     "lib/finder.rb",
      "lib/janitor.rb",
      "lib/janitor/finder.rb",
      "lib/janitor/janitor.rb",
@@ -43,7 +42,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{janitor scans your code for leftover debug statements, consolr logs, and vulgarity}
+  s.summary = %q{janitor scans your code for leftover debug statements, console.logs, and vulgarity}
   s.test_files = [
     "spec/lib/finder_spec.rb",
      "spec/lib/janitor_spec.rb",
