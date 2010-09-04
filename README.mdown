@@ -31,3 +31,8 @@ Configure your app to load the Janitor rake tasks by adding the following to you
     # Code cleanup goodies
     require 'janitor/tasks'
 
+To Do
+=====
+
+* YML-ize the various search tasks to allow a project to specify the things that shouldn't be in the codebase.
+* Create a profanity filter
