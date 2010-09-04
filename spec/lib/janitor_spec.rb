@@ -5,19 +5,35 @@ describe "Janitor" do
     it "should call number_of_matches on Finder with the given path" do
       path    = "a_path"
       pattern = "a_pattern"
-      finder = mock('finder')
-      finder.should_receive(:number_of_matches).with(pattern).and_return(0)
-      Finder.should_receive(:new).with(path).and_return(finder)
+      mock_finder(pattern, path)
       Janitor.count(pattern, path)
     end
     
-    it "should raise an exception when number_of_matches returns a non-zero count" do
+    it "should return the value returned by the call to number_of_matches" do
       path    = "a_path"
       pattern = "a_pattern"
-      finder = mock('finder')
-      finder.should_receive(:number_of_matches).with(pattern).and_return(1)
-      Finder.should_receive(:new).with(path).and_return(finder)
-      lambda { Janitor.count(pattern, path) }.should raise_error
+      mock_finder(pattern, path, :number_of_matches => 1)
+      Janitor.count(pattern, path).should == 1
     end
+  end
+  
+  describe " #hits" do
+    it "should call #hits on Finder and return the result" do
+      path    = "a_path"
+      pattern = "a_pattern"
+      hits    = ['result']
+      mock_finder(pattern, path, :hits => hits)
+      Janitor.hits(pattern, path).should == hits
+    end
+  end
+  
+  def mock_finder(pattern, path, *args)
+    options = args.first ? args.first : {}
+    options = {:number_of_matches => 0}.merge options
+    options = {:hits              => 0}.merge options
+    finder = mock('finder', 
+      :number_of_matches => options[:number_of_matches],
+      :hits              => options[:hits])
+    Finder.should_receive(:new).and_return(finder)
   end
 end

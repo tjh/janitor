@@ -8,11 +8,27 @@ describe "Finder" do
     end
   end
   
+  describe " #number_of_matches" do
+    it "should do a search_by_regex, returning the number of hits the RakResult gives" do
+      pattern = 'a_regex'
+      finder = Finder.new
+      rak_result = mock('rak_result', :hits => ['janitor.rb:3'])
+      finder.should_receive(:search_by_regex).with(pattern).and_return(rak_result)
+      finder.number_of_matches(pattern).should == 1
+    end
+  end
+  
+  describe " #hits" do
+    it "should return an Array of file names followed by a colon and line number from the RakResult" do
+      pending
+    end
+  end
+  
   describe " #search_by_regex" do
     it "should execute a rak search with the given pattern and -all" do
       pattern = 'a_regex'
       finder = Finder.new
-      finder.should_receive(:exec_rak).with(pattern, '-all')
+      finder.should_receive(:exec_rak).with(pattern, '--all')
       finder.search_by_regex(pattern)
     end
   end

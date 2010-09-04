@@ -7,11 +7,11 @@ class Finder
   
   def number_of_matches(pattern)
     rak_result = search_by_regex(pattern)
-    rak_result.files.size
+    rak_result.hits.size
   end
   
   def search_by_regex(pattern)
-    exec_rak(pattern, '-all')
+    exec_rak(pattern, '--all')
   end
   
   def exec_rak(pattern, options)
