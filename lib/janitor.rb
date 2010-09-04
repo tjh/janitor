@@ -5,7 +5,9 @@ class Janitor
     system(cmd)
   end
   
-  def self.count (pattern, path="*")
-    %x{rak -c -a #{pattern} #{path}}.lines.count
+  def self.count (path, pattern)
+    finder = Finder.new(path)
+    count = finder.number_of_matches(pattern)
+    raise "Found #{pattern} #{count} times in #{path}" if count > 0
   end
 end
