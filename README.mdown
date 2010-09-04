@@ -18,3 +18,16 @@ To learn more about Ack:
 [http://betterthangrep.com][]
 
 [http://betterthangrep.com/]: http://betterthangrep.com
+
+Installation
+============
+
+Install the gem.
+
+    gem install janitor
+
+Configure your app to load the Janitor rake tasks by adding the following to you Rakefile:
+
+    # Code cleanup goodies
+    require 'janitor/tasks'
+

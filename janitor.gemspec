@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "init.rb",
      "janitor.gemspec",
      "lib/finder.rb",
+     "lib/janitor.rb",
      "lib/janitor/finder.rb",
      "lib/janitor/janitor.rb",
      "lib/janitor/rak_result.rb",
